@@ -15,6 +15,7 @@ This is not a Server router, but a iOS UI Router, You can build your own iOS app
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ```Swift
+let router = FWRouterManager.shared.router
 route.match("scheme://host/path") { (target) -> Bool in
     let demoVC = DemoViewController()
     target.navigation?.pushViewController(demoVC, animated: true)
