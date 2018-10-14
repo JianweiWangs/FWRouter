@@ -42,10 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             target.navigation?.pushViewController(demoVC, animated: true)
             print(target.url)
             print(target.applicationDelegate)
-            print(target.navigation)
-            print(target.window)
+            print(target.navigation as Any)
+            print(target.window as Any)
             print(target)
-            print(target.paramters["name"])
+            print(target.paramters["name"] as Any)
             return true
         }
         
