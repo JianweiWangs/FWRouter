@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/FWRouter.svg?style=flat)](https://cocoapods.org/pods/FWRouter)
 [![License](https://img.shields.io/cocoapods/l/FWRouter.svg?style=flat)](https://cocoapods.org/pods/FWRouter)
 [![Platform](https://img.shields.io/cocoapods/p/FWRouter.svg?style=flat)](https://cocoapods.org/pods/FWRouter)
-
+[![codecov](https://codecov.io/gh/JianweiWangs/FWRouter/branch/master/graph/badge.svg)](https://codecov.io/gh/JianweiWangs/FWRouter)
 
 FWRouter is a High-performance trie-node router, idea from [Vapor/routing](https://github.com/vapor/routing)
 
