@@ -7,8 +7,8 @@
 
 extension Router {
     @discardableResult
-    public func route(url: URLComponentsRepresentable, paramters: [String: AnyHashable] = [:]) -> Bool {
-        let target = Target(url: url, paramters: paramters)
+    public func route(url: URLComponentsRepresentable, parameters: [String: AnyHashable] = [:]) -> Bool {
+        let target = Target(url: url, parameters: parameters)
         guard let resolution = route(tar: target) else {
             return false
         }

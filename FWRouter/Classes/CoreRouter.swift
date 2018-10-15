@@ -19,7 +19,7 @@ public final class CoreRouter: Router {
     
     public func route(tar: Target) -> Action? {
         let path = tar.path.map { $0.path }
-        return router.route(path: path, parameters: &tar.pathParamters)
+        return router.route(path: path, parameters: &tar.pathParameters)
     }
     
     public static func `default`() -> CoreRouter {

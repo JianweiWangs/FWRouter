@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         route.match("https://www.wangjianwei.com/dd", "demo", String.parameter, "subtitle", String.parameter) { (target) -> Bool in
             let demoVC = DemoViewController()
-            let title = target.pathParamters.next(String.self)! + "+" + target.pathParamters.next(String.self)!
+            let title = target.pathParameters.next(String.self)! + "+" + target.pathParameters.next(String.self)!
             demoVC.title = title
             target.navigation?.pushViewController(demoVC, animated: true)
             print(target.url)
@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(target.navigation as Any)
             print(target.window as Any)
             print(target)
-            print(target.paramters["name"] as Any)
+            print(target.parameters["name"] as Any)
             return true
         }
         
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     let router = FWRouterManager.shared.router
     
     @IBAction func onClick(_ sender: Any) {
-        guard router.route(url: "https://www.wangjianwei.com/dd/demo/second/subtitle/title", paramters: ["name": "wangjianwei"]) else {
+        guard router.route(url: "https://www.wangjianwei.com/dd/demo/second/subtitle/title", parameters: ["name": "wangjianwei"]) else {
             print("route failed")
             return
         }

@@ -9,7 +9,7 @@ public final class Target: CustomStringConvertible {
     public var description: String {
         let des: [String] = [
             "url = " + url,
-            "parameters = " + pathParamters.description,
+            "parameters = " + pathParameters.description,
         ]
         return des.joined(separator: "\n")
     }
@@ -19,10 +19,10 @@ public final class Target: CustomStringConvertible {
         return unwrapComponents.path.convertToPathComponents()
     }
     public let url: String
-    public var pathParamters: Parameters = .init()
-    public let paramters: [String: AnyHashable]
-    public init(url: URLComponentsRepresentable, paramters: [String: AnyHashable] = [:]) {
+    public var pathParameters: Parameters = .init()
+    public let parameters: [String: AnyHashable]
+    public init(url: URLComponentsRepresentable, parameters: [String: AnyHashable] = [:]) {
         self.url = url.url
-        self.paramters = paramters
+        self.parameters = parameters
     }
 }

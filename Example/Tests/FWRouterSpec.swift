@@ -36,48 +36,48 @@ class FWRouterSpec: QuickSpec {
                     expect(router.route(url: "scheme://host/test2")) == true
                 })
             })
-            context("Paramter", {
-                it("Host + Path + Paramter", closure: {
-                    router.match("scheme://host", "paramter", String.parameter, use: { (target) -> Bool in
-                        expect(target.url) == "scheme://host/paramter/param0"
-                        expect(target.pathParamters.next(String.self)) == "param0"
+            context("PathParameter", {
+                it("Host + Path + Parameter", closure: {
+                    router.match("scheme://host", "parameter", String.parameter, use: { (target) -> Bool in
+                        expect(target.url) == "scheme://host/parameter/param0"
+                        expect(target.pathParameters.next(String.self)) == "param0"
                         return true
                     })
-                    expect(router.route(url: "scheme://host/paramter/param0")) == true
+                    expect(router.route(url: "scheme://host/parameter/param0")) == true
                 })
-                it("Host + Path + Paramter + Path", closure: {
-                    router.match("scheme://host", "paramter", String.parameter, "test1", use: { (target) -> Bool in
-                        expect(target.url) == "scheme://host/paramter/param0/test1"
-                        expect(target.pathParamters.next(String.self)) == "param0"
+                it("Host + Path + Parameter + Path", closure: {
+                    router.match("scheme://host", "parameter", String.parameter, "test1", use: { (target) -> Bool in
+                        expect(target.url) == "scheme://host/parameter/param0/test1"
+                        expect(target.pathParameters.next(String.self)) == "param0"
                         return true
                     })
-                    expect(router.route(url: "scheme://host/paramter/param0/test1")) == true
+                    expect(router.route(url: "scheme://host/parameter/param0/test1")) == true
                 })
-                it("Host + Path + Int.Paramter", closure: {
-                    router.match("scheme://host", "/paramter", "/int", Int.parameter, use: { (target) -> Bool in
-                        expect(target.url) == "scheme://host/paramter/int/50"
-                        expect(target.pathParamters.next(Int.self)) == 50
+                it("Host + Path + Int.Parameter", closure: {
+                    router.match("scheme://host", "/parameter", "/int", Int.parameter, use: { (target) -> Bool in
+                        expect(target.url) == "scheme://host/parameter/int/50"
+                        expect(target.pathParameters.next(Int.self)) == 50
                         return true
                     })
-                    expect(router.route(url: "scheme://host/paramter/int/50")) == true
+                    expect(router.route(url: "scheme://host/parameter/int/50")) == true
                 })
-                it("Host + Path + Float.Paramter", closure: {
-                    router.match("scheme://host", "/paramter", "/float", Float.parameter, use: { (target) -> Bool in
-                        expect(target.url) == "scheme://host/paramter/float/50.3"
-                        expect(target.pathParamters.next(Float.self)) == 50.3
+                it("Host + Path + Float.Parameter", closure: {
+                    router.match("scheme://host", "/parameter", "/float", Float.parameter, use: { (target) -> Bool in
+                        expect(target.url) == "scheme://host/parameter/float/50.3"
+                        expect(target.pathParameters.next(Float.self)) == 50.3
                         return true
                     })
-                    expect(router.route(url: "scheme://host/paramter/float/50.3")) == true
+                    expect(router.route(url: "scheme://host/parameter/float/50.3")) == true
                 })
             })
 
             context("Any & All", {
-                it("Any", closure: {
-                    router.match(any, use: { (target) -> Bool in
-                        expect(target.url) == "/anything"
+                it("Host + Path + Any", closure: {
+                    router.match("scheme://host/path", any, "/path2", use: { (target) -> Bool in
+                        expect(target.url) == "scheme://host/path/testAny/path2"
                         return true
                     })
-                    expect(router.route(url: "/anything")) == true
+                    expect(router.route(url: "scheme://host/path/testAny/path2")) == true
                 })
                 it("All", closure: {
                     router.match("all", all, use: { (target) -> Bool in
@@ -85,6 +85,17 @@ class FWRouterSpec: QuickSpec {
                         return true
                     })
                     expect(router.route(url: "/all/wangfei")) == true
+                    expect(router.route(url: "/all1/wangfei")) == false
+                })
+            })
+
+            context("Parameter", {
+                it("route with parameter", closure: {
+                    router.match("scheme://host/path", "/thridParameter", use: { (target) -> Bool in
+                        expect(target.parameters["name"] as? String) == "wangjianwei"
+                        return true
+                    })
+                    expect(router.route(url: "scheme://host/path/thridParameter", parameters: ["name": "wangjianwei"])) == true
                 })
             })
         }

@@ -8,14 +8,41 @@
 
 FWRouter is a High-performance trie-node router, idea from [Vapor/routing](https://github.com/vapor/routing)
 
-This is not a Server router, but a iOS UI Router, You can build your own iOS app from it. 
+This is not a Server router, but an iOS UI Router, You can build your own iOS app from it. 
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, and run `make` from the root directory first.
+
+There are some script help you develop and PR.
+
+```make
+# install dependence and open project
+make
+
+# install dependence
+make install
+
+# build test
+make test
+
+# open project
+make open
+
+# quit Xcode
+make quit
+
+```
+
+Before you pull request, make sure test success.
+
+## Useage
+
+### URL Match
 
 ```Swift
 let router = FWRouterManager.shared.router
+// url match
 route.match("scheme://host/path") { (target) -> Bool in
     let demoVC = DemoViewController()
     target.navigation?.pushViewController(demoVC, animated: true)
@@ -23,6 +50,21 @@ route.match("scheme://host/path") { (target) -> Bool in
 }
 route.route(url: "scheme://host/path")
 ```
+
+### Path Parameter
+
+```Swift
+router.match("scheme://host", "parameter", String.parameter, use: { (target) -> Bool in
+    print(target.url) // scheme://host/parameter/param0
+    print(target.pathParamters.next(String.self)) // "param0"
+    return true
+})
+router.route(url: "scheme://host/parameter/param0")
+```
+
+### Parameter
+
+
 
 ## Requirements
 
