@@ -36,7 +36,7 @@ make quit
 
 Before you pull request, make sure test success.
 
-## Useage
+## Usage
 
 ### URL Match
 
