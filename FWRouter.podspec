@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FWRouter'
-  s.version          = '0.1.0-rc'
+  s.version          = '0.1.0-rc1'
   s.summary          = '🚍 High-performance trie-node router.'
 
 # This description is used to generate tags and improve search results.
