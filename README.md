@@ -64,7 +64,16 @@ router.route(url: "scheme://host/parameter/param0")
 
 ### Parameter
 
-
+```Swift
+router.match("scheme://host/path", "/thridParameter", use: { (target) -> Bool in
+    print(target.parameters["name"] as? String) //"wangjianwei"
+    return true
+})
+router.route(
+    url: "scheme://host/path/thridParameter", 
+    parameters: ["name": "wangjianwei"]
+)
+```
 
 ## Requirements
 
