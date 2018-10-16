@@ -73,7 +73,7 @@ class FWRouterSpec: QuickSpec {
 
             context("Any & All", {
                 it("Host + Path + Any", closure: {
-                    router.match("scheme://host/path", any, "/path2", use: { (target) -> Bool in
+                    router.match("scheme://host/path", path: [any, PathComponent(stringLiteral: "path2")], use: { (target) -> Bool in
                         expect(target.url) == "scheme://host/path/testAny/path2"
                         return true
                     })
@@ -93,6 +93,7 @@ class FWRouterSpec: QuickSpec {
                 it("route with parameter", closure: {
                     router.match("scheme://host/path", "/thridParameter", use: { (target) -> Bool in
                         expect(target.parameters["name"] as? String) == "wangjianwei"
+                        expect(target.path[0].convertURLToPathComponents().readable) == "/path"
                         return true
                     })
                     expect(router.route(url: "scheme://host/path/thridParameter", parameters: ["name": "wangjianwei"])) == true

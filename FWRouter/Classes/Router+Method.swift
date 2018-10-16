@@ -15,7 +15,10 @@ extension Router {
         return resolution.resolve(to: target)
     }
     
-    
+    public func match(_ url: URLComponentsRepresentable = "", path: [PathComponentsRepresentable], use closure: @escaping (Target) -> Bool) {
+        match(url, path: path.convertToPathComponents(), use: closure)
+    }
+
     public func match(_ url: URLComponentsRepresentable = "",_ path: PathComponentsRepresentable..., use closure: @escaping (Target) -> Bool) {
         match(url, path: path.convertToPathComponents(), use: closure)
     }
