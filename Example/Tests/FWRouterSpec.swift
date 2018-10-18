@@ -28,9 +28,7 @@ class FWRouterSpec: QuickSpec {
                 it("Host + Path", closure: {
                     router.match("scheme://host", "test2", use: { (target) -> Bool in
                         expect(target.url) == "scheme://host/test2"
-                        expect(target.url.url) == "scheme://host/test2"
-                        expect(target.path.readable) == "/test2"
-                        expect(target.path[0].url) == "/test2"
+                        expect(target.url.origin) == "scheme://host"
                         return true
                     })
                     expect(router.route(url: "scheme://host/test2")) == true
@@ -73,11 +71,12 @@ class FWRouterSpec: QuickSpec {
 
             context("Any & All", {
                 it("Host + Path + Any", closure: {
-                    router.match("scheme://host/path", path: [any, PathComponent(stringLiteral: "path2")], use: { (target) -> Bool in
-                        expect(target.url) == "scheme://host/path/testAny/path2"
+                    router.match("scheme://host/path", path: [any, PathComponent(stringLiteral: "path2"), Int.parameter, String.parameter], use: { (target) -> Bool in
+                        expect(target.url) == "scheme://host/path/testAny/path2/65/asd"
+                        print(target)
                         return true
                     })
-                    expect(router.route(url: "scheme://host/path/testAny/path2")) == true
+                    expect(router.route(url: "scheme://host/path/testAny/path2/65/asd")) == true
                 })
                 it("All", closure: {
                     router.match("all", all, use: { (target) -> Bool in
@@ -93,7 +92,6 @@ class FWRouterSpec: QuickSpec {
                 it("route with parameter", closure: {
                     router.match("scheme://host/path", "/thridParameter", use: { (target) -> Bool in
                         expect(target.parameters["name"] as? String) == "wangjianwei"
-                        expect(target.path[0].convertURLToPathComponents().readable) == "/path"
                         return true
                     })
                     expect(router.route(url: "scheme://host/path/thridParameter", parameters: ["name": "wangjianwei"])) == true

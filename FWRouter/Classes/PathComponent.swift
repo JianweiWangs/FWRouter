@@ -17,19 +17,6 @@ public enum PathComponent: ExpressibleByStringLiteral {
 public let any: PathComponent = .anything
 public let all: PathComponent = .catchall
 
-extension Array where Element == PathComponent {
-    public var readable: String {
-        return "/" + map {
-            switch $0 {
-            case .constant(let s): return s
-            case .parameter(let p): return ":\(p)"
-            case .anything: return ":"
-            case .catchall: return "*"
-            }
-            }.joined(separator: "/")
-    }
-}
-
 public protocol PathComponentsRepresentable {
     func convertToPathComponents() -> [PathComponent]
 }
@@ -37,14 +24,6 @@ public protocol PathComponentsRepresentable {
 extension PathComponent: PathComponentsRepresentable {
     public func convertToPathComponents() -> [PathComponent] {
         return [self]
-    }
-    public var path: String {
-        switch self {
-        case .constant(let s): return s
-        case .parameter(let p): return ":\(p)"
-        case .anything: return ":"
-        case .catchall: return "*"
-        }
     }
 }
 

@@ -8,15 +8,10 @@
 public final class Target: CustomStringConvertible {
     public var description: String {
         let des: [String] = [
-            "url = " + url,
-            "parameters = " + pathParameters.description,
+            "url = " + url.url,
+            "parameters = {\n" + pathParameters.description + "\n}",
         ]
         return des.joined(separator: "\n")
-    }
-    public var path: [PathComponent] {
-        let components = URLComponents(string: url)
-        guard let unwrapComponents = components else { return [] }
-        return unwrapComponents.path.convertToPathComponents()
     }
     public let url: String
     public var pathParameters: Parameters = .init()
