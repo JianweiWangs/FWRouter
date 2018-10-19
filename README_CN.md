@@ -6,41 +6,46 @@
 [![Platform](https://img.shields.io/cocoapods/p/FWRouter.svg?style=flat)](https://cocoapods.org/pods/FWRouter)
 [![codecov](https://codecov.io/gh/JianweiWangs/FWRouter/branch/master/graph/badge.svg)](https://codecov.io/gh/JianweiWangs/FWRouter)
 
-中文版本请查看[这里](./README_CN.md)
 
-FWRouter is a High-performance trie-node router, idea from [Vapor/routing](https://github.com/vapor/routing)
+FWRouter 是一个高性能的字典树路由，灵感来自于 [Vapor/routing](https://github.com/vapor/routing)。
 
-This is not a Server router, but an iOS UI Router, You can build your own iOS app from it. 
+这并非是一个服务端路由，你可以通过它简单的构建自定义的 iOS 应用。
 
-## Example
+## 示例
 
-To run the example project, clone the repo, and run `make` from the root directory first.
+通过 
+`
+git clone https://github.com/JianweiWangs/FWRouter.git
+&& cd FWRouter
+&& make
+`
+命令，快速开始查看源码以及使用样例代码。
 
-There are some script help you develop and PR.
+这里有一些脚本能够辅助开发以及向仓库发起 PR。
 
 ```make
-# install dependence and open project
+# 拉取全部依赖并自动打开工程
 make
 
-# install dependence
+# 拉取依赖
 make install
 
-# build test
+# 单元测试
 make test
 
-# open project
+# 打开工程
 make open
 
-# quit Xcode
+# 退出 Xcode
 make quit
 
 ```
 
-Before you pull request, make sure test success.
+ 请在 PR 发起前确保单元测试能够通过，并保证单元测试的覆盖率不会降低。
 
-## Usage
+## 使用
 
-### URL Match
+### URL 匹配
 
 ```Swift
 let router = FWRouterManager.shared.router
@@ -53,7 +58,7 @@ route.match("scheme://host/path") { (target) -> Bool in
 route.route(url: "scheme://host/path")
 ```
 
-### Path Parameter
+### 路径参数获取
 
 ```Swift
 router.match("scheme://host", "parameter", String.parameter, use: { (target) -> Bool in
@@ -64,7 +69,7 @@ router.match("scheme://host", "parameter", String.parameter, use: { (target) -> 
 router.route(url: "scheme://host/parameter/param0")
 ```
 
-### Parameter
+### 传递额外的参数
 
 ```Swift
 router.match("scheme://host/path", "/thridParameter", use: { (target) -> Bool in
@@ -77,24 +82,24 @@ router.route(
 )
 ```
 
-## Requirements
+## 环境
 
-This library requires `iOS 8.0+`, `Xcode 9.0+` and `Swift 4.0+`.
+该仓库需要 `iOS 8.0+`, `Xcode 9.0+` 以及 `Swift 4.0+`.
 
-## Installation
+## 依赖
 
-FWRouter is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+FWRouter 支持 [CocoaPods](https://cocoapods.org). 
+在 Podfile 中添加如下代码进行依赖
 
 ```ruby
 pod 'FWRouter'
 ```
 
-## Author
+## 作者
 
 JianweiWangs, wangjianwei.sir@gmail.com
 
-## License
+## 证书
 
-FWRouter is available under the MIT license. See the LICENSE file for more info.
+FWRouter 使用 MIT 证书. 查看 LICENSE 文件获取更多详情.
 
