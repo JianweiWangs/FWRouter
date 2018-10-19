@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FWRouter'
-  s.version          = '0.1.0-rc1'
+  s.version          = '0.1.0-rc2'
   s.summary          = '🚍 High-performance trie-node router.'
 
 # This description is used to generate tags and improve search results.
@@ -28,6 +28,6 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/JianweiWangs/FWRouter.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
-  s.swift_version = '4.0'
+  s.swift_version = '4.2'
   s.source_files = 'FWRouter/Classes/**/*'
 end
