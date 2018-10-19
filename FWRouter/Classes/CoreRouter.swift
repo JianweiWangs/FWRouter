@@ -18,7 +18,7 @@ public final class CoreRouter: Router {
     }
     
     public func route(tar: Target) -> Action? {
-        let path = tar.path.map { $0.path }
+        let path = tar.urlMatch
         return router.route(path: path, parameters: &tar.pathParameters)
     }
     
@@ -29,3 +29,12 @@ public final class CoreRouter: Router {
     private init() {}
 }
 
+extension Target {
+    var urlMatch: [String] {
+        let ret = url.path.split(separator: "/").map { String($0) }
+        if url.host == "" {
+            return ret
+        }
+        return [url.host] + ret
+    }
+}

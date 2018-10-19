@@ -66,24 +66,13 @@ extension Double: Parameter { }
 
 
 public struct ParameterValue {
-    
     public let slug: String
-    
     public let value: String
-    
-    public init(slug: String, value: String) {
-        self.slug = slug
-        self.value = value
-    }
 }
 
 public struct Parameters: CustomStringConvertible {
     
-    public var values: [ParameterValue]
-    
-    public init() {
-        values = []
-    }
+    public var values: [ParameterValue] = []
     
     public mutating func next<P>(_ parameter: P.Type) -> P.ResolvedParameter? where P: Parameter {
         
@@ -102,6 +91,8 @@ public struct Parameters: CustomStringConvertible {
         return item
     }
     public var description: String {
-        return values.map { $0.slug + "=" + $0.value }.joined(separator: "\n")
+        return values
+                .map { "\t" + $0.slug + " = " + $0.value }
+                .joined(separator: "\n")
     }
 }
