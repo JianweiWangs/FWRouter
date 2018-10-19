@@ -19,7 +19,7 @@ git clone https://github.com/JianweiWangs/FWRouter.git
 && cd FWRouter
 && make
 `
-命令，快速开始查看源码以及使用样例代码。
+命令，快速开始查看源码及使用样例代码。
 
 这里有一些脚本能够辅助开发以及向仓库发起 PR。
 
