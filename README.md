@@ -14,9 +14,15 @@ This is not a Server router, but an iOS UI Router, You can build your own iOS ap
 
 ## Example
 
-To run the example project, clone the repo, and run `make` from the root directory first.
+use 
+`
+git clone https://github.com/JianweiWangs/FWRouter.git
+&& cd FWRouter
+&& make
+`
+to fetch and build source code quickly.
 
-There are some script help you develop and PR.
+There are also some script help you develop and PR.
 
 ```make
 # install dependence and open project
