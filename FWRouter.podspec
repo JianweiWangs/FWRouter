@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FWRouter'
-  s.version          = '0.1.0-rc2'
+  s.version          = '0.1.0'
   s.summary          = '🚍 High-performance trie-node router.'
 
 # This description is used to generate tags and improve search results.
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
   FWRouter is a High-performance trie-node router.
-                       DESC
+  DESC
 
   s.homepage         = 'https://github.com/JianweiWangs/FWRouter'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
