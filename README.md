@@ -1,5 +1,6 @@
 # FWRouter
 
+[![Contact Us](https://img.shields.io/discord/490015137181466645.svg)](https://discordapp.com/invite/RF2rWZ)
 [![CI Status](https://img.shields.io/travis/JianweiWangs/FWRouter.svg?style=flat)](https://travis-ci.org/JianweiWangs/FWRouter)
 [![Version](https://img.shields.io/cocoapods/v/FWRouter.svg?style=flat)](https://cocoapods.org/pods/FWRouter)
 [![License](https://img.shields.io/cocoapods/l/FWRouter.svg?style=flat)](https://cocoapods.org/pods/FWRouter)
