@@ -16,11 +16,11 @@ This is not a Server router, but an iOS UI Router, You can build your own iOS ap
 ## Example
 
 use 
-`
+```
 git clone https://github.com/JianweiWangs/FWRouter.git
-&& cd FWRouter
-&& make
-`
+cd FWRouter
+make
+```
 to fetch and build source code quickly.
 
 There are also some script help you develop and PR.
