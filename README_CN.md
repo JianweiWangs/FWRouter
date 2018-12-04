@@ -14,11 +14,11 @@ FWRouter 是一个高性能的字典树路由，灵感来自于 [Vapor/routing](
 ## 示例
 
 通过 
-`
+```
 git clone https://github.com/JianweiWangs/FWRouter.git
-&& cd FWRouter
-&& make
-`
+cd FWRouter
+make
+```
 命令，快速开始查看源码及使用样例代码。
 
 这里有一些脚本能够辅助开发以及向仓库发起 PR。
