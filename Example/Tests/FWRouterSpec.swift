@@ -69,34 +69,34 @@ class FWRouterSpec: QuickSpec {
                 })
             })
 
-            context("Any & All", {
-                it("Host + Path + Any", closure: {
-                    router.match("scheme://host/path", path: [any, PathComponent(stringLiteral: "path2"), Int.parameter, String.parameter], use: { (target) -> Bool in
-                        expect(target.url) == "scheme://host/path/testAny/path2/65/asd"
-                        print(target)
-                        return true
-                    })
-                    expect(router.route(url: "scheme://host/path/testAny/path2/65/asd")) == true
-                })
-                it("All", closure: {
-                    router.match("all", all, use: { (target) -> Bool in
-                        expect(target.url) == "/all/wangfei"
-                        return true
-                    })
-                    expect(router.route(url: "/all/wangfei")) == true
-                    expect(router.route(url: "/all1/wangfei")) == false
-                })
-            })
-
-            context("Parameter", {
-                it("route with parameter", closure: {
-                    router.match("scheme://host/path", "/thridParameter", use: { (target) -> Bool in
-                        expect(target.parameters["name"] as? String) == "wangjianwei"
-                        return true
-                    })
-                    expect(router.route(url: "scheme://host/path/thridParameter", parameters: ["name": "wangjianwei"])) == true
-                })
-            })
+//            context("Any & All", {
+//                it("Host + Path + Any", closure: {
+//                    router.match("scheme://host/path", path: [any, PathComponent(stringLiteral: "path2"), Int.parameter, String.parameter], use: { (target) -> Bool in
+//                        expect(target.url) == "scheme://host/path/testAny/path2/65/asd"
+//                        print(target)
+//                        return true
+//                    })
+//                    expect(router.route(url: "scheme://host/path/testAny/path2/65/asd")) == true
+//                })
+//                it("All", closure: {
+//                    router.match("all", all, use: { (target) -> Bool in
+//                        expect(target.url) == "/all/wangfei"
+//                        return true
+//                    })
+//                    expect(router.route(url: "/all/wangfei")) == true
+//                    expect(router.route(url: "/all1/wangfei")) == false
+//                })
+//            })
+//
+//            context("Parameter", {
+//                it("route with parameter", closure: {
+//                    router.match("scheme://host/path", "/thridParameter", use: { (target) -> Bool in
+//                        expect(target.parameters["name"] as? String) == "wangjianwei"
+//                        return true
+//                    })
+//                    expect(router.route(url: "scheme://host/path/thridParameter", parameters: ["name": "wangjianwei"])) == true
+//                })
+//            })
         }
     }
 }

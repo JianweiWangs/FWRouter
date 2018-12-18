@@ -267,7 +267,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FWRouter_Example/Pods-FWRouter_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FWRouter_Example/Pods-FWRouter_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FWRouter/FWRouter.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -276,7 +276,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FWRouter_Example/Pods-FWRouter_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FWRouter_Example/Pods-FWRouter_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4B559A56FCBEFB731096027F /* [CP] Check Pods Manifest.lock */ = {
@@ -303,7 +303,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FWRouter_Tests/Pods-FWRouter_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FWRouter_Tests/Pods-FWRouter_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
@@ -314,7 +314,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FWRouter_Tests/Pods-FWRouter_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FWRouter_Tests/Pods-FWRouter_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A816A93C742C108514F10592 /* [CP] Check Pods Manifest.lock */ = {

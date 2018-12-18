@@ -1,5 +1,5 @@
 PODS:
-  - FWRouter (0.1.0-rc2)
+  - FWRouter (0.1.0)
   - Nimble (7.3.0)
   - Quick (1.3.1)
 
@@ -9,7 +9,7 @@ DEPENDENCIES:
   - Quick (= 1.3.1)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Nimble
     - Quick
 
@@ -18,10 +18,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FWRouter: 911219d2b7fe156ced887dcd0eced5d27ccb9bf4
+  FWRouter: 227ebcb74fdf7961f448c7723265eb3eb156fcee
   Nimble: c8d6a1f463701921c46de965c673e13cafa09196
   Quick: d17304d58d0d169dd0bd1c6e5c28e3318de32a1a
 
 PODFILE CHECKSUM: 8c0e961c6e00c886d98dbca59b4c1c13ecc54212
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.0.beta.2
