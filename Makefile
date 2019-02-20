@@ -8,5 +8,6 @@ clean:
 quit:
 	osascript -e 'quit app "Xcode"'
 test:
+
 	- xcodebuild -scheme FWRouter-Example -workspace Example/FWRouter.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone XR,OS=12.0' build test
 	
